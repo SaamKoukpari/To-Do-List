@@ -1,7 +1,39 @@
+@import "../styles/variables.scss";
+
 .sidebar {
   display: flex;
   flex-direction: column;
-  
+  background: $dark-background;
+  min-width: 21rem;
+
+  &__header {
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    height: 4rem;
+    background: #f6f6f6;
+    font-style: italic; 
+    color: #31829d;
+    font-weight: 450;
+    font-size: xxx-large;
+  }
+
+  &--logo {
+    align-self: left;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &__separator {
+    width: 90%;
+    margin: $spacing 0;
+    border: solid 1px;
+    color: #f6f6f6;
+  }
+
+  &--centered {
+    align-self: center;
+  }
 }
 
 

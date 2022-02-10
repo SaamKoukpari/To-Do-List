@@ -1,10 +1,12 @@
-import './Application.css';
+import './Application.scss';
 
 function Application() {
   return (
-    <div className="App">
+    <main className="layout">
+      <div className="Application">
       
-    </div>
+      </div>
+    </main>
   );
 }
 

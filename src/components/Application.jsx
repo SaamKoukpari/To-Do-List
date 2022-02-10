@@ -1,13 +1,12 @@
 import './Application.scss';
 
-function Application() {
+
+export default function Application() {
   return (
     <main className="layout">
-      <div className="Application">
+      <div className="sidebar">
       
       </div>
     </main>
   );
-}
-
-export default Application;
+};

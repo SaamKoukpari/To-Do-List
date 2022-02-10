@@ -1,13 +1,18 @@
 import React from "react";
-//import classNames from "classnames";
+//import "./DayListItem.scss";
 
 
 export default function DayListItem(props) {
 
 
   return (
-    <div>
-
-    </div>
+    <li 
+      className="day"
+      // onClick={props.setDay}
+      // selected={props.selected}
+      >
+      <h2 className="text--regular">Monday</h2>
+    </li>
+    
   );
 };

@@ -4,10 +4,34 @@ import DayList from "./DayList";
 
 
 export default function Application() {
-  const [state, setState] = useState({
-    day: "Monday",
-    days: [],
-  });
+ 
+  const state = {
+    days : [
+      {
+        id: "1",
+        day: "Monday"
+      },
+      {
+        id: "2",
+        day: "Tuesday"
+      },
+      {
+        id: "3",
+        day: "Wednesday"
+      },
+      {
+        id: "4",
+        day: "Thursday"
+      },
+      {
+        id: "5",
+        day: "Friday"
+      }
+    ]
+  }
+
+  const { state } = useState()
+  
 
   return (
     <main className="layout">
@@ -21,7 +45,7 @@ export default function Application() {
         </div>
         <hr className="sidebar__separator sidebar--centered"/>
         <nav className="sidebar__menu">
-          <DayList/>
+          {/* <DayList/> */}
         </nav>
       
       </section>

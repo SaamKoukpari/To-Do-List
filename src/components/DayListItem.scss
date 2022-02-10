@@ -1,8 +1,8 @@
-@import "styles/mixins.scss";
-@import "styles/variables.scss";
+@import "../styles/mixins.scss";
+@import "../styles/variables.scss";
 
 
-.day-list {
+.day {
   &__item {
     @include fade;
 

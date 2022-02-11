@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import './Application.scss';
+import Task from "./Task/index.jsx"
 import DayList from "./DayList";
 
 
 export default function Application() {
  
-  const state = {
+  const data = {
     days : [
       {
         id: "1",
@@ -45,9 +46,11 @@ export default function Application() {
         </div>
         <hr className="sidebar__separator sidebar--centered"/>
         <nav className="sidebar__menu">
-          {/* <DayList/> */}
+          <DayList/>
         </nav>
-      
+      </section>
+      <section className="tasks">
+        <Task/>
       </section>
     </main>
   );

@@ -6,7 +6,7 @@
   &__item {
     @include fade;
 
-    color: #8395a7;
+    color: #9baab9;
     height: 5rem;
     padding-left: 2rem;
     display: flex;
@@ -17,6 +17,8 @@
       background-color: #ee5253;
       cursor: pointer;
       color: $dark-background;
+      // padding-left: 2rem;
+      margin-left: 1rem;
     }
 
     &--selected {
@@ -28,8 +30,8 @@
       }
     }
 
-    &--full {
-      opacity: $inactive-opacity;
-    }
+    // &--full {
+    //   opacity: $inactive-opacity;
+    // }
   }
 }

@@ -5,33 +5,16 @@ import DayList from "./DayList";
 
 
 export default function Application() {
- 
-  // const data = {
-  //   days : [
-  //     {
-  //       id: "1",
-  //       day: "Monday"
-  //     },
-  //     {
-  //       id: "2",
-  //       day: "Tuesday"
-  //     },
-  //     {
-  //       id: "3",
-  //       day: "Wednesday"
-  //     },
-  //     {
-  //       id: "4",
-  //       day: "Thursday"
-  //     },
-  //     {
-  //       id: "5",
-  //       day: "Friday"
-  //     }
-  //   ]
-  // }
 
-  const { state } = useState()
+  //micro service frontend where I'm using an [object] to initalize state 
+  
+  const { state } = useState([
+    {
+      id: "",
+      title: "",
+      category: "",
+    }
+  ]);
   
 
   return (

@@ -1,13 +1,14 @@
+@import "../styles/variables.scss";
+
 .todo {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  // margin-top: 1rem;
   margin-left: 1rem;
   justify-content: space-between;
 }
 
-.c-cb {
+.checkbox {
   box-sizing: border-box;
   font-family: Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,8 +27,23 @@
   align-items: center;
 }
 
+.btn {
+  border: 0.1rem solid #4d4d4d;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.btn__danger {
+  color: #fff;
+  background-color: #ca3c3c;
+  border-color: #bd2130;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
 .todo-label {
   display: flex;
   justify-content: space-between;
   margin-left: 1rem;
+  font-size: medium;
 }

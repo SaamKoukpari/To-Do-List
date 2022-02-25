@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { nanoid } from "nanoid";
 import './Application.scss';
 import Form from "./Form.jsx";
 import DayList from "./DayList";
@@ -21,7 +22,7 @@ export default function Application(props) {
 
   //function that will anticipate data from <Form/> as input, then pass it back to <Form/> as a prop. i.e. callback prop function
   function addTask(title) {
-    const newTask = { id: "id", title: title, completed: false };
+    const newTask = { id: "todo-" + nanoid(), title: title, completed: false };
     setTasks([...tasks, newTask]);
   }
 

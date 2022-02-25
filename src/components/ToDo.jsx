@@ -8,7 +8,12 @@ export default function ToDo(props) {
   return (
     <li className="todo">
       <div className="checkbox">
-        <input id="todo-0" type="checkbox" defaultChecked={props.completed} />
+        <input 
+          id={props.id} 
+          type="checkbox" 
+          defaultChecked={props.completed}
+          onChange={() => props.toggleComplete(props.id)}
+        />
         <label className="todo-label" htmlFor={props.id}>
           {props.title}
         </label>
@@ -17,7 +22,11 @@ export default function ToDo(props) {
         <button type="button" className="btn">
           Edit <span className="visually-hidden"></span>
         </button>
-        <button type="button" className="btn btn__danger">
+        <button 
+          type="button" 
+          className="btn btn__danger"
+          onClick={() => props.deleteTask(props.id)}
+        >
           Delete <span className="visually-hidden"></span>
         </button>
       </div>

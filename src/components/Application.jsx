@@ -11,12 +11,32 @@ export default function Application(props) {
   //micro service frontend where I'm using an [object] to initalize state 
   const [ tasks, setTasks ] = useState(props.tasks);
 
+  function toggleComplete(id) {
+    const updatedTasks = tasks.map(task => {
+      // if this task has the same ID as the edited task
+      if (id === task.id) {
+        // use object spread to make a new object
+        // whose `completed` prop has been inverted
+        return {...task, completed: !task.completed}
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
+  }
+
+  function deleteTask(id) {
+    const remainingTasks = tasks.filter(task => id !== task.id);
+    setTasks(remainingTasks);
+  }
+
   const taskList = tasks.map(task => (
     <ToDo 
       id={task.id} 
       title={task.title} 
       completed={task.completed} 
-      key={task.id} 
+      key={task.id}
+      toggleComplete={toggleComplete}
+      deleteTask={deleteTask} 
     />
   ));
 
@@ -46,7 +66,7 @@ export default function Application(props) {
       </section>
       <section className="tasks">
         <Form addTask={addTask} />
-      <h2 className="task-count">{headingText}</h2>
+        <h2 className="task-count">{headingText}</h2>
         {taskList}
       </section>
     </main>

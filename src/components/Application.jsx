@@ -1,6 +1,6 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import './Application.scss';
-import Task from "./Task/index.jsx"
+import Form from "./Form.jsx";
 import DayList from "./DayList";
 
 
@@ -8,15 +8,7 @@ export default function Application() {
 
   //micro service frontend where I'm using an [object] to initalize state 
   
-  const { state } = useState([
-    {
-      id: "",
-      title: "",
-      category: "",
-    }
-  ]);
   
-
   return (
     <main className="layout">
       <section className="sidebar">
@@ -33,7 +25,7 @@ export default function Application() {
         </nav>
       </section>
       <section className="tasks">
-        <Task/>
+        <Form/>
       </section>
     </main>
   );

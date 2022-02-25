@@ -1,8 +1,16 @@
-import react from "react";
-import "../Task/styles.scss"
+import { useState } from "react";
+import "./Form.scss";
 
 
-export default function Task() {
+export default function Form() {
+
+  const { task, setTask } = useState([
+    {
+      id: "",
+      title: "",
+      category: "",
+    }
+  ]);
 
   const handleSubmit = (e) => {
     console.log(e.target.value)

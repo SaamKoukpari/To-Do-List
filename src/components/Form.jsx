@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Form.scss";
 
 
-export default function Form() {
+export default function Form(props) {
 
   const { task, setTask } = useState([
     {

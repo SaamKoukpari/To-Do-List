@@ -2,6 +2,7 @@
 import './Application.scss';
 import Form from "./Form.jsx";
 import DayList from "./DayList";
+import ToDo from './ToDo';
 
 
 export default function Application() {
@@ -26,6 +27,7 @@ export default function Application() {
       </section>
       <section className="tasks">
         <Form/>
+        <ToDo/>
       </section>
     </main>
   );

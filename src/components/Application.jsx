@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import './Application.scss';
 import Form from "./Form.jsx";
 import DayList from "./DayList";
@@ -8,17 +8,23 @@ import ToDo from './ToDo';
 export default function Application(props) {
 
   //micro service frontend where I'm using an [object] to initalize state 
-  
-  // console.log("TASKS", props.tasks)
+  const [ tasks, setTasks ] = useState(props.tasks);
 
-  const taskList = props.tasks.map(task => (
+  const taskList = tasks.map(task => (
     <ToDo 
       id={task.id} 
-      name={task.name} 
+      title={task.title} 
       completed={task.completed} 
       key={task.id} 
     />
   ));
+
+  //function that will anticipate data from <Form/> as input, then pass it back to <Form/> as a prop. i.e. callback prop function
+  function addTask(title) {
+    const newTask = { id: "id", title: title, completed: false };
+    setTasks([...tasks, newTask]);
+  }
+
   
   return (
     <main className="layout">
@@ -32,11 +38,11 @@ export default function Application(props) {
         </div>
         <hr className="sidebar__separator sidebar--centered"/>
         <nav className="sidebar__menu">
-          <DayList/>
+          <DayList />
         </nav>
       </section>
       <section className="tasks">
-        <Form/>
+        <Form addTask={addTask} />
         {taskList}
       </section>
     </main>

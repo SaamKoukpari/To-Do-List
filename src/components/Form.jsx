@@ -4,31 +4,37 @@ import "./Form.scss";
 
 export default function Form(props) {
 
-  const { task, setTask } = useState([
-    {
-      id: "",
-      title: "",
-      category: "",
-    }
-  ]);
+  const [ title, setTitle ] = useState('');
+
+  const handleChange = (e) => {
+    setTitle(e.target.value);
+  } 
 
   const handleSubmit = (e) => {
-    console.log(e.target.value)
-    
+    if (e.target.value === " ") {
+      alert("cannot leave blank!")
+    }
+    e.preventDefault();
+    props.addTask(title);
+    setTitle("");
   }
 
 
   return(
     <div>
-      <form>
-      <input 
-        className="task_input_field"
-        type="text"
-        placeholder="Enter New Task"
-        onChange={(e) => handleSubmit(e)}
-      />
-      </form>
-        
+      <form onSubmit={handleSubmit}>
+        <input
+          className="task_input_field"
+          type="text"
+          autoComplete="off"
+          placeholder="Enter New Task"
+          value={title}
+          onChange={handleChange}
+        />
+        <button type="submit" className="btn btn__primary btn__lg">
+        Add
+        </button>
+      </form>      
     </div>
   )
 }

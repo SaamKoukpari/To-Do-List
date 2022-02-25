@@ -5,9 +5,9 @@ import Application from './components/Application';
 import reportWebVitals from './reportWebVitals';
 
 const DATA = [
-  { id: "todo-0", name: "Eat", completed: true },
-  { id: "todo-1", name: "Clean", completed: false },
-  { id: "todo-2", name: "Sleep", completed: false }
+  { id: "todo-0", title: "Eat", completed: true },
+  { id: "todo-1", title: "Clean", completed: false },
+  { id: "todo-2", title: "Sleep", completed: false }
 ];
 
 ReactDOM.render(

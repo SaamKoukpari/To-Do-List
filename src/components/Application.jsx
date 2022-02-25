@@ -27,7 +27,12 @@ export default function Application() {
       </section>
       <section className="tasks">
         <Form/>
-        <ToDo/>
+        <ToDo name="Eat" 
+              completed={true}/>
+        <ToDo name="Clean" 
+              completed={false}/>
+        <ToDo name="Sleep"
+              completed={false}/>
       </section>
     </main>
   );

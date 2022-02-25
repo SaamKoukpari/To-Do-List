@@ -26,7 +26,9 @@ export default function Application(props) {
     setTasks([...tasks, newTask]);
   }
 
-  
+  const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task';
+  const headingText = `${taskList.length} ${tasksNoun} remaining`;
+
   return (
     <main className="layout">
       <section className="sidebar">
@@ -44,6 +46,7 @@ export default function Application(props) {
       </section>
       <section className="tasks">
         <Form addTask={addTask} />
+      <h2 className="task-count">{headingText}</h2>
         {taskList}
       </section>
     </main>

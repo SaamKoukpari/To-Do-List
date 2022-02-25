@@ -5,10 +5,20 @@ import DayList from "./DayList";
 import ToDo from './ToDo';
 
 
-export default function Application() {
+export default function Application(props) {
 
   //micro service frontend where I'm using an [object] to initalize state 
   
+  // console.log("TASKS", props.tasks)
+
+  const taskList = props.tasks.map(task => (
+    <ToDo 
+      id={task.id} 
+      name={task.name} 
+      completed={task.completed} 
+      key={task.id} 
+    />
+  ));
   
   return (
     <main className="layout">
@@ -27,12 +37,7 @@ export default function Application() {
       </section>
       <section className="tasks">
         <Form/>
-        <ToDo name="Eat" 
-              completed={true}/>
-        <ToDo name="Clean" 
-              completed={false}/>
-        <ToDo name="Sleep"
-              completed={false}/>
+        {taskList}
       </section>
     </main>
   );

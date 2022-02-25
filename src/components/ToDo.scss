@@ -1,0 +1,33 @@
+.todo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // margin-top: 1rem;
+  margin-left: 1rem;
+  justify-content: space-between;
+}
+
+.c-cb {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 44px;
+  clear: left;
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+}
+
+.todo-label {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1rem;
+}
